@@ -1,0 +1,675 @@
+{
+  "settings": {
+    "language": "en",
+    "theme": "light",
+    "personalInfo": {
+      "fullName": "Andrew Arana",
+      "role": "Administración Central",
+      "location": "Ciudad de Guatemala"
+    },
+    "contact": {
+      "phone": "+502 5555 1234",
+      "email": "andrewalexander05626@gmail.com",
+      "emailVerified": true,
+      "verificationSentAt": "2025-12-13T03:53:49+00:00"
+    },
+    "notificationPreferences": {
+      "phone": true,
+      "gmail": true,
+      "inApp": true,
+      "leadDaysBefore": 1
+    },
+    "predictive": {
+      "confidenceThreshold": 0.75
+    },
+    "updatedAt": "2025-12-22T02:38:08+00:00"
+  },
+  "gasolineOverrides": {
+    "diesel": {
+      "nextRestockDate": "2025-01-17",
+      "currentInventoryLiters": 1000.0,
+      "inventoryBaselineLiters": 1000.0,
+      "inventoryBaselineAt": "2026-01-16T04:32:03+00:00",
+      "tankCapacityLiters": 52000.0
+    },
+    "regular": {
+      "currentInventoryLiters": 15000.0,
+      "inventoryBaselineLiters": 15000.0,
+      "inventoryBaselineAt": "2026-01-16T00:52:12+00:00"
+    },
+    "super": {
+      "currentInventoryLiters": 15000.0,
+      "inventoryBaselineLiters": 15000.0,
+      "inventoryBaselineAt": "2026-01-16T00:52:19+00:00"
+    }
+  },
+  "calendar": {
+    "events": [
+      {
+        "id": "dc1e3270-3b1e-400b-8b4d-64da285e0b3e",
+        "title": "Revisión operativa semanal",
+        "description": "Revisión de inventario, seguridad y ventas.",
+        "start": "2025-10-28T15:00:00+00:00",
+        "end": "2025-10-28T16:00:00+00:00",
+        "allDay": false,
+        "source": "manual",
+        "fuelType": null,
+        "metadata": {},
+        "createdAt": "2025-10-29T05:24:04+00:00",
+        "updatedAt": "2025-10-29T05:24:04+00:00"
+      },
+      {
+        "id": "predictive-regular",
+        "title": "Restock Regular",
+        "description": "Projected to run out within 3 days. Expedite restock.",
+        "start": "2026-01-15T14:00:00+00:00",
+        "end": "2026-01-15T15:00:00+00:00",
+        "allDay": false,
+        "source": "predictive",
+        "fuelType": "regular",
+        "metadata": {
+          "confidence": 0.9473978155851913,
+          "projectedDepletionDate": "2026-01-16",
+          "recommendedVolume": 27000.0,
+          "defaultNextRestock": "2026-01-15",
+          "leadDaysBefore": 1,
+          "tankCapacityLiters": 42000.0,
+          "fuelLabel": "Regular"
+        },
+        "updatedAt": "2026-01-16T04:37:42+00:00",
+        "createdAt": "2025-12-13T03:53:11+00:00"
+      },
+      {
+        "id": "predictive-super",
+        "title": "Restock Super",
+        "description": "Projected to run out within 3 days. Expedite restock.",
+        "start": "2026-01-15T14:00:00+00:00",
+        "end": "2026-01-15T15:00:00+00:00",
+        "allDay": false,
+        "source": "predictive",
+        "fuelType": "super",
+        "metadata": {
+          "confidence": 0.9445896606441607,
+          "projectedDepletionDate": "2026-01-17",
+          "recommendedVolume": 21000.0,
+          "defaultNextRestock": "2026-01-15",
+          "leadDaysBefore": 2,
+          "tankCapacityLiters": 36000.0,
+          "fuelLabel": "Super"
+        },
+        "updatedAt": "2026-01-16T04:37:42+00:00",
+        "createdAt": "2025-12-13T03:53:11+00:00"
+      },
+      {
+        "id": "predictive-diesel",
+        "title": "Restock Diesel",
+        "description": "Projected to run out within 3 days. Expedite restock.",
+        "start": "2025-01-17T14:00:00+00:00",
+        "end": "2025-01-17T15:00:00+00:00",
+        "allDay": false,
+        "source": "predictive",
+        "fuelType": "diesel",
+        "metadata": {
+          "confidence": 0.9461833824623189,
+          "projectedDepletionDate": "2026-01-16",
+          "recommendedVolume": 51000.0,
+          "defaultNextRestock": "2026-01-15",
+          "leadDaysBefore": 364,
+          "tankCapacityLiters": 52000.0,
+          "fuelLabel": "Diesel"
+        },
+        "updatedAt": "2026-01-16T04:37:42+00:00",
+        "createdAt": "2025-12-13T03:53:11+00:00"
+      },
+      {
+        "id": "1da9038d-61d8-4fb2-a294-681973968743",
+        "title": "Try tommorow",
+        "description": "",
+        "start": "2025-12-14T14:00:00+00:00",
+        "end": "2025-12-14T15:00:00+00:00",
+        "allDay": true,
+        "source": "manual",
+        "fuelType": null,
+        "metadata": {
+          "reminderEnabled": true,
+          "reminderLeadDays": 1,
+          "reminderEmailSentFor": "2025-12-14T14:00:00+00:00",
+          "reminderSentAt": "2025-12-13T06:01:28+00:00"
+        },
+        "createdAt": "2025-12-13T05:24:38+00:00",
+        "updatedAt": "2025-12-13T05:24:38+00:00"
+      },
+      {
+        "id": "a4808e86-657c-4e53-a18a-49e5d2296dc8",
+        "title": "try for tonight ",
+        "description": "",
+        "start": "2025-12-16T14:00:00+00:00",
+        "end": "2025-12-16T15:00:00+00:00",
+        "allDay": true,
+        "source": "manual",
+        "fuelType": null,
+        "metadata": {
+          "reminderEnabled": true,
+          "reminderLeadDays": 1,
+          "reminderEmailSentFor": "2025-12-16T14:00:00+00:00",
+          "reminderSentAt": "2025-12-15T09:27:31+00:00"
+        },
+        "createdAt": "2025-12-14T23:19:34+00:00",
+        "updatedAt": "2025-12-14T23:19:34+00:00"
+      }
+    ],
+    "updatedAt": "2026-01-16T04:37:42+00:00"
+  },
+  "finance": {
+    "updatedAt": "2026-01-16T04:40:15+00:00",
+    "currency": "GTQ",
+    "earnings": {
+      "updatedAt": "2026-01-16T04:40:15+00:00",
+      "fuel": {
+        "regular": {
+          "pricePerGallon": 32.00242815427695,
+          "litersSold": 75899.09,
+          "mode": "synced",
+          "updatedAt": "2026-01-16T04:40:14+00:00"
+        },
+        "super": {
+          "pricePerGallon": 34.504018911527595,
+          "litersSold": 31380.86,
+          "mode": "synced",
+          "updatedAt": "2026-01-16T04:40:15+00:00"
+        },
+        "diesel": {
+          "pricePerGallon": 29.49459098083723,
+          "litersSold": 90014.12,
+          "mode": "synced",
+          "updatedAt": "2026-01-16T04:40:13+00:00"
+        }
+      },
+      "shop": {
+        "amount": 0.0,
+        "mode": "manual",
+        "notes": "",
+        "updatedAt": "2025-12-13T04:46:41+00:00"
+      },
+      "otherIncome": []
+    },
+    "costs": {
+      "updatedAt": "2026-01-16T04:40:15+00:00",
+      "entries": [
+        {
+          "id": "staff-lucia-hernandez",
+          "name": "Lucía Hernández",
+          "amount": 3400.0,
+          "type": "recurring",
+          "dueDate": "2025-12-24",
+          "notes": "Atención tienda",
+          "reminder": {
+            "enabled": true,
+            "daysBefore": 2,
+            "syncToCalendar": true,
+            "calendarEventId": "finance-cost-staff-lucia-hernandez",
+            "reminderDate": "2025-12-22"
+          },
+          "createdAt": "2025-12-13T04:12:52+00:00",
+          "updatedAt": "2026-01-16T04:40:15+00:00",
+          "source": "staff",
+          "metadata": {
+            "payType": "salary",
+            "payFrequency": "biweekly",
+            "hourlyRate": 3400.0,
+            "hours": null,
+            "bonus": 200,
+            "discount": 0.0,
+            "resetFrequency": "monthly",
+            "resetPeriod": "2026-01",
+            "bonusMonth": "2026-01",
+            "lastResetDue": null
+          }
+        },
+        {
+          "id": "staff-ana-cruz",
+          "name": "Ana Cruz",
+          "amount": 4800.0,
+          "type": "recurring",
+          "dueDate": "2025-12-25",
+          "notes": "Supervisora de turno",
+          "reminder": {
+            "enabled": true,
+            "daysBefore": 3,
+            "syncToCalendar": true,
+            "calendarEventId": "finance-cost-staff-ana-cruz",
+            "reminderDate": "2025-12-22"
+          },
+          "createdAt": "2025-12-13T04:12:52+00:00",
+          "updatedAt": "2026-01-16T04:40:15+00:00",
+          "source": "staff",
+          "metadata": {
+            "payType": "salary",
+            "payFrequency": "monthly",
+            "hourlyRate": 4800.0,
+            "hours": null,
+            "bonus": 0.0,
+            "discount": 0.0,
+            "resetFrequency": "monthly",
+            "resetPeriod": "2026-01",
+            "bonusMonth": "2025-12",
+            "lastResetDue": null
+          }
+        },
+        {
+          "id": "staff-a3664eac-c8be-49c5-ba4f-72cbeba2d2e9",
+          "name": "Test Worker",
+          "amount": 1000.0,
+          "type": "recurring",
+          "dueDate": "2026-01-01",
+          "notes": "Fuel attendant",
+          "reminder": {
+            "enabled": true,
+            "daysBefore": 2,
+            "syncToCalendar": false,
+            "calendarEventId": null,
+            "reminderDate": "2025-12-30"
+          },
+          "createdAt": "2025-12-13T04:12:52+00:00",
+          "updatedAt": "2026-01-16T04:40:15+00:00",
+          "source": "staff",
+          "metadata": {
+            "payType": "salary",
+            "payFrequency": "monthly",
+            "hourlyRate": 1000.0,
+            "hours": null,
+            "bonus": 0.0,
+            "discount": 0.0,
+            "resetFrequency": "monthly",
+            "resetPeriod": "2026-01",
+            "lastResetDue": null
+          }
+        },
+        {
+          "id": "staff-marco-garcia",
+          "name": "Marco García",
+          "amount": 3650.0,
+          "type": "recurring",
+          "dueDate": "2026-01-10",
+          "notes": "Despachador",
+          "reminder": {
+            "enabled": false,
+            "daysBefore": 2,
+            "syncToCalendar": false,
+            "calendarEventId": null,
+            "reminderDate": null
+          },
+          "createdAt": "2025-12-13T04:12:52+00:00",
+          "updatedAt": "2026-01-16T04:40:15+00:00",
+          "source": "staff",
+          "metadata": {
+            "payType": "salary",
+            "payFrequency": "monthly",
+            "hourlyRate": 3650.0,
+            "hours": null,
+            "bonus": 0.0,
+            "discount": 0.0,
+            "resetFrequency": "monthly",
+            "resetPeriod": "2026-01",
+            "lastResetDue": null,
+            "bonusMonth": "2025-12"
+          }
+        },
+        {
+          "id": "staff-5c5ac54d-28ba-40be-932a-8d35b51de10a",
+          "name": "test 2",
+          "amount": 12000.0,
+          "type": "recurring",
+          "dueDate": "2026-01-15",
+          "notes": "Cashier",
+          "reminder": {
+            "enabled": true,
+            "daysBefore": 2,
+            "syncToCalendar": false,
+            "calendarEventId": null,
+            "reminderDate": "2026-01-13"
+          },
+          "createdAt": "2026-01-15T16:59:25+00:00",
+          "updatedAt": "2026-01-16T04:40:15+00:00",
+          "source": "staff",
+          "metadata": {
+            "payType": "salary",
+            "payFrequency": "monthly",
+            "hourlyRate": 12000.0,
+            "hours": null,
+            "bonus": 0.0,
+            "discount": 0.0,
+            "resetFrequency": "monthly",
+            "resetPeriod": "2026-01",
+            "lastResetDue": null
+          }
+        }
+      ]
+    },
+    "meta": {
+      "currentMonth": "2026-01",
+      "lastPayrollEmailSent": "2026-01-15"
+    }
+  },
+  "staffing": {
+    "updatedAt": "2026-01-16T04:40:15+00:00",
+    "workers": [
+      {
+        "id": "ana-cruz",
+        "fullName": "Ana Cruz",
+        "role": "Supervisora de turno",
+        "basePay": 4800.0,
+        "payFrequency": "monthly",
+        "nextPayDate": "2025-12-25",
+        "reminderLeadDays": 3,
+        "notificationDefault": true,
+        "createdAt": "2025-11-03T06:15:11+00:00",
+        "updatedAt": "2026-01-16T04:40:15+00:00",
+        "jobType": "Supervisora de turno",
+        "profileImage": null,
+        "contact": {
+          "type": "phone",
+          "value": ""
+        },
+        "workSchedule": {
+          "daysOfWeek": [
+            "monday",
+            "tuesday",
+            "wednesday",
+            "thursday",
+            "friday"
+          ],
+          "startTime": "08:00",
+          "endTime": "16:00"
+        },
+        "payRate": 4800.0,
+        "payType": "salary"
+      },
+      {
+        "id": "marco-garcia",
+        "fullName": "Marco García",
+        "role": "Despachador",
+        "basePay": 3650.0,
+        "payFrequency": "monthly",
+        "nextPayDate": "2026-01-10",
+        "reminderLeadDays": 2,
+        "notificationDefault": false,
+        "createdAt": "2025-11-03T06:15:11+00:00",
+        "updatedAt": "2026-01-16T04:40:15+00:00",
+        "jobType": "Despachador",
+        "profileImage": null,
+        "contact": {
+          "type": "phone",
+          "value": ""
+        },
+        "workSchedule": {
+          "daysOfWeek": [
+            "monday",
+            "tuesday",
+            "wednesday",
+            "thursday",
+            "friday"
+          ],
+          "startTime": "08:00",
+          "endTime": "16:00"
+        },
+        "payRate": 3650.0,
+        "payType": "salary"
+      },
+      {
+        "id": "lucia-hernandez",
+        "fullName": "Lucía Hernández",
+        "role": "Atención tienda",
+        "basePay": 3400.0,
+        "payFrequency": "biweekly",
+        "nextPayDate": "2025-12-24",
+        "reminderLeadDays": 2,
+        "notificationDefault": true,
+        "createdAt": "2025-11-03T06:15:11+00:00",
+        "updatedAt": "2026-01-16T04:40:15+00:00",
+        "jobType": "Atención tienda",
+        "profileImage": null,
+        "contact": {
+          "type": "phone",
+          "value": ""
+        },
+        "workSchedule": {
+          "daysOfWeek": [
+            "monday",
+            "tuesday",
+            "wednesday",
+            "thursday",
+            "friday"
+          ],
+          "startTime": "08:00",
+          "endTime": "16:00",
+          "dayOverrides": {
+            "friday": {
+              "startTime": "08:00",
+              "endTime": "19:00"
+            }
+          }
+        },
+        "payRate": 3400.0,
+        "payType": "salary"
+      },
+      {
+        "fullName": "Test Worker",
+        "jobType": "Fuel attendant",
+        "payType": "salary",
+        "payRate": 1000.0,
+        "workSchedule": {
+          "daysOfWeek": [
+            "monday",
+            "tuesday",
+            "wednesday",
+            "thursday",
+            "friday",
+            "saturday",
+            "sunday"
+          ],
+          "startTime": "08:00",
+          "endTime": "16:00",
+          "dayOverrides": {
+            "friday": {
+              "startTime": "08:00",
+              "endTime": "20:00"
+            }
+          }
+        },
+        "contact": {
+          "type": "phone",
+          "value": "123456"
+        },
+        "profileImage": null,
+        "notificationDefault": true,
+        "reminderLeadDays": 2,
+        "nextPayDate": "2026-01-01",
+        "id": "a3664eac-c8be-49c5-ba4f-72cbeba2d2e9",
+        "createdAt": "2025-11-03T06:15:11+00:00",
+        "updatedAt": "2026-01-16T04:40:15+00:00",
+        "role": "Fuel attendant",
+        "basePay": 1000.0,
+        "payFrequency": "monthly"
+      },
+      {
+        "id": "5c5ac54d-28ba-40be-932a-8d35b51de10a",
+        "fullName": "test 2",
+        "jobType": "Cashier",
+        "role": "Cashier",
+        "profileImage": null,
+        "contact": {
+          "type": "phone",
+          "value": "40029812"
+        },
+        "workSchedule": {
+          "daysOfWeek": [
+            "monday",
+            "tuesday",
+            "wednesday",
+            "thursday",
+            "friday",
+            "saturday",
+            "sunday"
+          ],
+          "startTime": "08:00",
+          "endTime": "16:00"
+        },
+        "payRate": 12000.0,
+        "basePay": 12000.0,
+        "payType": "salary",
+        "payFrequency": "monthly",
+        "reminderLeadDays": 2,
+        "notificationDefault": true,
+        "nextPayDate": "2026-01-15",
+        "createdAt": "2026-01-15T16:59:25+00:00",
+        "updatedAt": "2026-01-16T04:40:15+00:00"
+      }
+    ]
+  },
+  "shopInventory": {
+    "updatedAt": "2025-12-22T05:02:45+00:00",
+    "alertDaysBefore": 7,
+    "items": [
+      {
+        "id": "88e32bcf-e026-430f-b0e8-3175e6d8b2a0",
+        "name": "e-PORTAFOLIO RETOS AMBIENTALES Y SOSTENIBILIDAD 2025",
+        "supplier": "a",
+        "price": 6.01,
+        "quantity": 19,
+        "expirationDate": "2025-12-14",
+        "createdAt": "2025-12-13T04:43:11+00:00",
+        "updatedAt": "2025-12-22T05:02:28+00:00",
+        "notificationSentAt": null,
+        "reminderLeadDays": 3
+      },
+      {
+        "id": "088d0021-50a9-4a69-9a0b-68065d21b40e",
+        "name": "MBIENTALES Y SOSTENIBILIDAD 2025",
+        "supplier": "212",
+        "price": 12.0,
+        "quantity": 21,
+        "expirationDate": "2025-12-31",
+        "createdAt": "2025-12-13T05:30:52+00:00",
+        "updatedAt": "2025-12-22T05:02:24+00:00",
+        "notificationSentAt": null,
+        "reminderLeadDays": 3
+      },
+      {
+        "id": "00f68786-b267-46d6-a33c-ea9d30067423",
+        "name": "bruh",
+        "supplier": "a",
+        "price": 12.0,
+        "quantity": 3,
+        "expirationDate": "2025-12-31",
+        "createdAt": "2025-12-14T23:22:54+00:00",
+        "updatedAt": "2025-12-22T05:02:33+00:00",
+        "notificationSentAt": null,
+        "reminderLeadDays": 2
+      }
+    ],
+    "removalLog": []
+  },
+  "suppliers": {
+    "updatedAt": "2025-12-22T00:24:01+00:00",
+    "entries": [
+      {
+        "id": "5bcb16c9-ae97-42d9-98ff-e03dbb9f0e22",
+        "name": "Carlos Manuel",
+        "category": "fuel",
+        "tags": [],
+        "products": [
+          "Diesel"
+        ],
+        "active": true,
+        "basePriceNote": null,
+        "leadTimeHours": null,
+        "contact": {
+          "name": "No c",
+          "email": "noc@gmail.com",
+          "phone": "28791923"
+        },
+        "notes": "Si",
+        "createdAt": "2025-12-21T22:52:53+00:00",
+        "updatedAt": "2025-12-21T22:52:53+00:00"
+      },
+      {
+        "id": "6d6094e7-24d6-4c5d-8685-730b542753e1",
+        "name": "Jose Fernando",
+        "category": "fuel",
+        "tags": [
+          "Express"
+        ],
+        "products": [
+          "Regular"
+        ],
+        "active": true,
+        "basePriceNote": null,
+        "leadTimeHours": null,
+        "contact": {
+          "name": null,
+          "email": "noc@gmail.com",
+          "phone": "40021711"
+        },
+        "notes": null,
+        "createdAt": "2025-12-21T22:56:42+00:00",
+        "updatedAt": "2025-12-21T22:56:42+00:00"
+      },
+      {
+        "id": "fae48721-5471-4c0a-99ae-85394aab4e36",
+        "name": "Felipe Hermando",
+        "category": "store",
+        "tags": [
+          "Hielo"
+        ],
+        "products": [
+          "Hielo"
+        ],
+        "active": true,
+        "basePriceNote": null,
+        "leadTimeHours": null,
+        "contact": {
+          "name": "No c",
+          "email": null,
+          "phone": "53472180"
+        },
+        "notes": null,
+        "createdAt": "2025-12-21T23:28:29+00:00",
+        "updatedAt": "2025-12-22T00:24:01+00:00"
+      }
+    ]
+  },
+  "discoveredFuelTypes": [
+    {
+      "id": "regular",
+      "label": "Regular",
+      "sources": [
+        "sales"
+      ],
+      "discoveredAt": "2026-01-15T16:53:31+00:00",
+      "lastSeenAt": "2026-01-16T00:36:24+00:00"
+    },
+    {
+      "id": "diesel",
+      "label": "Diesel",
+      "sources": [
+        "sales"
+      ],
+      "discoveredAt": "2026-01-15T16:53:31+00:00",
+      "lastSeenAt": "2026-01-16T00:36:24+00:00"
+    },
+    {
+      "id": "super",
+      "label": "Super",
+      "sources": [
+        "sales"
+      ],
+      "discoveredAt": "2026-01-15T16:53:31+00:00",
+      "lastSeenAt": "2026-01-16T00:36:24+00:00"
+    }
+  ],
+  "staffingSchedule": {
+    "updatedAt": "2026-01-16T04:36:46+00:00",
+    "assignments": {}
+  }
+}

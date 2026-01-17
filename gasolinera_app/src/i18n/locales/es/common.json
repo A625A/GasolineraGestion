@@ -1,0 +1,262 @@
+{
+  "appTitle": "Centro de Control Gasolinera",
+  "brand": "Gasolinera",
+  "language": "Selector de idioma",
+  "logout": "Cerrar sesión",
+  "login": "Iniciar sesión",
+  "loginTitle": "Inicia sesión para continuar",
+  "loginFailed": "Error al iniciar sesión. Verifica tus credenciales.",
+  "username": "Usuario",
+  "password": "Contraseña",
+  "dashboard": "Tablero",
+  "gasoline": "Gasolina",
+  "calendar": {
+    "title": "Calendario de operaciones",
+    "today": "Hoy",
+    "upcoming": "Próximo evento (48h)",
+    "noUpcoming": "Sin eventos próximos en 48 horas",
+    "newEvent": "Nuevo evento",
+    "previous": "Mes anterior",
+    "next": "Mes siguiente",
+    "todayButton": "Ir a hoy",
+    "noEvents": "Sin eventos",
+    "allDay": "Todo el día",
+    "todayEvents": "Eventos de hoy",
+    "noEventsToday": "No hay eventos programados hoy.",
+    "confidence": "Confianza",
+    "volume": "Volumen sugerido",
+    "modal": {
+      "createHeading": "Nuevo evento",
+      "editHeading": "Editar evento",
+      "title": "Título",
+      "date": "Fecha",
+      "startTime": "Hora de inicio",
+      "endTime": "Hora de fin",
+      "description": "Descripción",
+      "save": "Guardar",
+      "cancel": "Cerrar",
+      "delete": "Eliminar evento",
+      "predictiveBadge": "Evento sugerido",
+      "predictiveHint": "Generado automáticamente por el modelo de inventario.",
+      "validation": {
+        "title": "Ingresa un título.",
+        "date": "Selecciona una fecha.",
+        "time": "La hora final debe ser posterior al inicio."
+      }
+    }
+  },
+  "shop": {
+    "title": "Tienda de conveniencia",
+    "placeholder": "Explora el catálogo desde la consola principal. (Módulo en preparación)"
+  },
+  "gasolineraInventory": "Inventario Gasolinera",
+  "staffing": "Personal",
+  "finance": "Finanzas",
+  "geo": "Escáner Geográfico",
+  "comingSoon": "Analítica detallada próximamente.",
+  "autoSave": {
+    "saving": "Guardando...",
+    "saved": "Cambios guardados",
+    "error": "No se pudo guardar",
+    "deleted": "Registro eliminado"
+  },
+  "topbar": {
+    "greeting": "Hola, {{name}}"
+  },
+  "settings": {
+    "userFallback": "Operaciones",
+    "title": "Configuración personal",
+    "subtitle": "Gestiona tu perfil, idioma y preferencias de notificación.",
+    "close": "Cerrar",
+    "error": "No fue posible cargar la configuración.",
+    "phoneHelp": "Formato sugerido: +502 #### ####",
+    "gmailHelp": "Debe ser una cuenta @gmail.com confirmada.",
+    "lastUpdated": "Actualizado el {{date}}",
+    "profile": {
+      "heading": "Perfil y rol",
+      "greeting": "Sesión iniciada como {{name}}",
+      "name": "Nombre completo",
+      "role": "Rol",
+      "location": "Ubicación"
+    },
+    "preferences": {
+      "heading": "Preferencias",
+      "language": "Idioma",
+      "theme": "Tema",
+      "themeOptions": {
+        "light": "Claro",
+        "dark": "Oscuro",
+        "system": "Sistema"
+      }
+    },
+    "contact": {
+      "heading": "Contacto",
+      "phone": "Teléfono",
+      "email": "Correo Gmail",
+      "verifyGmail": "Confirmar cuenta Gmail",
+      "verified": "Gmail verificado"
+    },
+    "notifications": {
+      "heading": "Canales de notificación",
+      "phone": "Llamada / SMS Guatemala",
+      "gmail": "Correo Gmail",
+      "inApp": "Notificaciones en la app"
+    },
+    "predictive": {
+      "heading": "Modelo predictivo",
+      "threshold": "Umbral de confianza: {{value}}%"
+    }
+  },
+  "gasolinePanel": {
+    "title": "Estadísticas de Gasolina",
+    "viewDetails": "Ver detalle",
+    "lastUpdated": "Última actualización",
+    "error": "No fue posible cargar la analítica de gasolina. Intenta nuevamente más tarde.",
+    "inventory": {
+      "title": "Inventario agregado",
+      "current": "Inventario actual",
+      "capacity": "Capacidad total",
+      "remaining": "Capacidad disponible",
+      "utilization": "Utilización"
+    },
+    "alerts": {
+      "heading": "Alertas de reabastecimiento",
+      "empty": "No hay alertas por el momento.",
+      "info": "Información",
+      "warning": "Advertencia",
+      "critical": "Crítica"
+    },
+    "alertsMessage": {
+      "info": "El inventario de {{fuel}} se mantiene estable. Revisa nuevamente el {{date}}.",
+      "warning": "Programa una entrega de {{fuel}} antes del {{date}} para evitar faltantes.",
+      "critical": "Urgente: reabastece {{fuel}} antes del {{date}} para evitar quedarte sin existencias."
+    },
+    "alertsFallback": "El inventario luce saludable en todos los combustibles.",
+    "fuelTypes": {
+      "regular": "Regular",
+      "super": "Súper",
+      "diesel": "Diésel"
+    },
+    "metrics": {
+      "weeklySales": "Ventas semanales",
+      "share": "Participación",
+      "inventory": "Nivel de inventario",
+      "avgDaily": "Promedio 7 días",
+      "pricePerGallon": "Precio por galón promedio",
+      "lastRestock": "Último reabastecimiento",
+      "nextRestock": "Próximo reabastecimiento",
+      "estimatedDepletion": "Agotamiento estimado",
+      "confidence": "Confianza",
+      "confidenceNote": "Valores ≥ 75% indican alta fiabilidad del modelo.",
+      "trendTitle": "Tendencia de consumo (30 días)",
+      "perDay": "por día",
+      "litersUnit": "L"
+    },
+    "consumption": {
+      "title": "Consumo diario por combustible (30 días)",
+      "legend": "Litros consumidos cada día",
+      "yAxis": "Litros",
+      "total": "Total último día"
+    },
+    "restockStatus": {
+      "ok": "Estable",
+      "warning": "Vigilar",
+      "critical": "Acción inmediata"
+    },
+    "restockStatusMessage": {
+      "ok": "El inventario se mantiene dentro del rango esperado.",
+      "warning": "El inventario comienza a bajar. Planifica un pedido pronto.",
+      "critical": "Crítico: el inventario se agotará en menos de 3 días."
+    }
+  },
+  "calendarPanel": {
+    "title": "Calendario y Recordatorios",
+    "error": "No fue posible cargar el calendario.",
+    "todayLabel": "Hoy es {{date}}",
+    "openCalendar": "Abrir calendario",
+    "empty": "No hay eventos programados para los próximos días.",
+    "emptyDay": "No hay recordatorios para este día.",
+    "confidence": "Confianza: {{value}}%",
+    "volume": "Volumen recomendado: {{value}} {{unit}}",
+    "restockTag": "Reposición sugerida",
+    "dayHeading": {
+      "today": "Hoy",
+      "tomorrow": "Mañana"
+    }
+  },
+  "inventory": {
+    "title": "Inventario operativo",
+    "subtitle": "Administra insumos clave con etiquetas personalizadas y cantidades actualizadas.",
+    "filters": {
+      "clear": "Limpiar filtros",
+      "searchLabel": "Buscar",
+      "searchPlaceholder": "Buscar por nombre, descripción o etiqueta…",
+      "tags": "Filtrar por etiquetas",
+      "tagsEmpty": "Crea tu primera etiqueta para verla aquí."
+    },
+    "actions": {
+      "addItem": "Agregar ítem",
+      "hideForm": "Ocultar formulario",
+      "delete": "Eliminar",
+      "deleteConfirm": "¿Eliminar {{name}} del inventario?"
+    },
+    "form": {
+      "title": "Registrar nuevo ítem",
+      "description": "Completa los datos esenciales del recurso.",
+      "name": "Nombre",
+      "quantity": "Cantidad",
+      "tags": "Etiquetas",
+      "cancel": "Cancelar",
+      "create": "Crear ítem",
+      "placeholderDescription": "Describe uso, ubicación o responsables."
+    },
+    "fields": {
+      "name": "Nombre",
+      "description": "Descripción",
+      "quantity": "Cantidad",
+      "tags": "Etiquetas",
+      "descriptionPlaceholder": "Agrega contexto adicional.",
+      "updatedAt": "Última actualización {{value}}"
+    },
+    "tagManager": {
+      "create": "Nueva etiqueta",
+      "rename": "Renombrar",
+      "remove": "Quitar",
+      "createPrompt": "Ingresa el nombre de la nueva etiqueta",
+      "renamePrompt": "Renombrar etiqueta \"{{label}}\"",
+      "deletePrompt": "¿Eliminar la etiqueta \"{{label}}\"? Debe estar libre de uso.",
+      "created": "Etiqueta \"{{label}}\" guardada.",
+      "renamed": "Etiqueta renombrada a \"{{label}}\".",
+      "deleted": "Etiqueta \"{{label}}\" eliminada."
+    },
+    "feedback": {
+      "saving": "Guardando cambios del inventario…",
+      "created": "Ítem creado correctamente.",
+      "updated": "Ítem actualizado.",
+      "deleted": "Ítem eliminado.",
+      "error": "No se pudo actualizar el inventario.",
+      "createdWithName": "\"{{name}}\" agregado al inventario.",
+      "deletedWithName": "\"{{name}}\" eliminado.",
+      "name": "Nombre actualizado.",
+      "description": "Descripción actualizada.",
+      "quantity": "Cantidad actualizada.",
+      "tags": "Etiquetas actualizadas."
+    },
+    "errors": {
+      "loadFailed": "No fue posible cargar los datos de inventario."
+    },
+    "empty": {
+      "title": "Aún no hay registros",
+      "description": "Agrega el primer recurso para comenzar el seguimiento."
+    }
+  },
+  "staffingPanel": {
+    "title": "Personal y Logística"
+  },
+  "financePanel": {
+    "title": "Resumen Financiero"
+  },
+  "geoPanel": {
+    "title": "Escáner de Oportunidades"
+  }
+}

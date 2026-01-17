@@ -1,0 +1,4 @@
+# env secrets (keep *.env.example committed)
+/env/*.env
+/.env
+/.env.*

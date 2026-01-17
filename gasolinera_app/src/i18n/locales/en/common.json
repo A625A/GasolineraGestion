@@ -1,0 +1,262 @@
+{
+  "appTitle": "Gasolinera Control Center",
+  "brand": "Gasolinera",
+  "language": "Language selector",
+  "logout": "Log out",
+  "login": "Log in",
+  "loginTitle": "Login to continue",
+  "loginFailed": "Login failed. Check your credentials.",
+  "username": "Username",
+  "password": "Password",
+  "dashboard": "Dashboard",
+  "gasoline": "Gasoline",
+  "calendar": {
+    "title": "Operations calendar",
+    "today": "Today",
+    "upcoming": "Next event (48h)",
+    "noUpcoming": "No upcoming events in the next 48 hours",
+    "newEvent": "New event",
+    "previous": "Previous month",
+    "next": "Next month",
+    "todayButton": "Jump to today",
+    "noEvents": "No events",
+    "allDay": "All day",
+    "todayEvents": "Today’s events",
+    "noEventsToday": "No events scheduled today.",
+    "confidence": "Confidence",
+    "volume": "Suggested volume",
+    "modal": {
+      "createHeading": "Create event",
+      "editHeading": "Edit event",
+      "title": "Title",
+      "date": "Date",
+      "startTime": "Start time",
+      "endTime": "End time",
+      "description": "Description",
+      "save": "Save",
+      "cancel": "Close",
+      "delete": "Delete event",
+      "predictiveBadge": "Suggested event",
+      "predictiveHint": "Automatically generated from inventory forecasts.",
+      "validation": {
+        "title": "Enter a title.",
+        "date": "Select a date.",
+        "time": "End time must be after start time."
+      }
+    }
+  },
+  "shop": {
+    "title": "Convenience shop",
+    "placeholder": "Browse retail items from the main console. (Module coming soon)"
+  },
+  "gasolineraInventory": "Gasolinera Inventory",
+  "staffing": "Staffing",
+  "finance": "Finance",
+  "geo": "Opportunity Scanner",
+  "comingSoon": "Detailed analytics coming soon.",
+  "autoSave": {
+    "saving": "Saving...",
+    "saved": "Changes saved",
+    "error": "Unable to save",
+    "deleted": "Entry removed"
+  },
+  "topbar": {
+    "greeting": "Hello, {{name}}"
+  },
+  "settings": {
+    "userFallback": "Operations",
+    "title": "Personal settings",
+    "subtitle": "Manage profile, language, and notification preferences.",
+    "close": "Close",
+    "error": "Unable to load settings.",
+    "phoneHelp": "Format: +502 #### ####",
+    "gmailHelp": "Must be a verified @gmail.com account.",
+    "lastUpdated": "Updated {{date}}",
+    "profile": {
+      "heading": "Profile & role",
+      "greeting": "Signed in as {{name}}",
+      "name": "Full name",
+      "role": "Role",
+      "location": "Location"
+    },
+    "preferences": {
+      "heading": "Preferences",
+      "language": "Language",
+      "theme": "Theme",
+      "themeOptions": {
+        "light": "Light",
+        "dark": "Dark",
+        "system": "System"
+      }
+    },
+    "contact": {
+      "heading": "Contact",
+      "phone": "Phone",
+      "email": "Gmail address",
+      "verifyGmail": "Confirm Gmail address",
+      "verified": "Gmail verified"
+    },
+    "notifications": {
+      "heading": "Notification channels",
+      "phone": "Phone / SMS Guatemala",
+      "gmail": "Gmail",
+      "inApp": "In-app notifications"
+    },
+    "predictive": {
+      "heading": "Predictive model",
+      "threshold": "Confidence threshold: {{value}}%"
+    }
+  },
+  "gasolinePanel": {
+    "title": "Gasoline Statistics",
+    "viewDetails": "View details",
+    "lastUpdated": "Last updated",
+    "error": "Unable to load gasoline analytics. Please try again shortly.",
+    "inventory": {
+      "title": "Aggregated inventory",
+      "current": "Current inventory",
+      "capacity": "Total capacity",
+      "remaining": "Available capacity",
+      "utilization": "Utilization"
+    },
+    "alerts": {
+      "heading": "Restock alerts",
+      "empty": "No alerts at the moment.",
+      "info": "Info",
+      "warning": "Warning",
+      "critical": "Critical"
+    },
+    "alertsMessage": {
+      "info": "{{fuel}} inventory is stable for now. Check again on {{date}}.",
+      "warning": "Schedule a delivery for {{fuel}} by {{date}} to avoid shortages.",
+      "critical": "Urgent: restock {{fuel}} by {{date}} to prevent stockout."
+    },
+    "alertsFallback": "Inventory looks healthy across all fuel types.",
+    "fuelTypes": {
+      "regular": "Regular",
+      "super": "Super",
+      "diesel": "Diesel"
+    },
+    "metrics": {
+      "weeklySales": "Weekly sales",
+      "share": "Market share",
+      "inventory": "Inventory level",
+      "avgDaily": "7-day average",
+      "pricePerGallon": "Average price per gallon",
+      "lastRestock": "Last restock",
+      "nextRestock": "Next restock",
+      "estimatedDepletion": "Est. depletion",
+      "confidence": "Confidence",
+      "confidenceNote": "Values ≥ 75% indicate high model reliability.",
+      "trendTitle": "30-day consumption trend",
+      "perDay": "per day",
+      "litersUnit": "L"
+    },
+    "consumption": {
+      "title": "Daily consumption by fuel (30 days)",
+      "legend": "Liters consumed per day",
+      "yAxis": "Liters",
+      "total": "Last day total"
+    },
+    "restockStatus": {
+      "ok": "Stable",
+      "warning": "Monitor",
+      "critical": "Immediate action"
+    },
+    "restockStatusMessage": {
+      "ok": "Inventory levels are within the expected range.",
+      "warning": "Inventory trending low. Plan a delivery soon.",
+      "critical": "Critical: stock will be depleted in under 3 days."
+    }
+  },
+  "calendarPanel": {
+    "title": "Calendar & Reminders",
+    "error": "Unable to load calendar events.",
+    "todayLabel": "Today is {{date}}",
+    "openCalendar": "Open calendar",
+    "empty": "No events scheduled for the next few days.",
+    "emptyDay": "No reminders for this day.",
+    "confidence": "Confidence: {{value}}%",
+    "volume": "Recommended volume: {{value}} {{unit}}",
+    "restockTag": "Restock suggested",
+    "dayHeading": {
+      "today": "Today",
+      "tomorrow": "Tomorrow"
+    }
+  },
+  "inventory": {
+    "title": "Gas station inventory",
+    "subtitle": "Create items, tags, and track quantities for daily operations.",
+    "filters": {
+      "clear": "Reset filters",
+      "searchLabel": "Search",
+      "searchPlaceholder": "Search by name, description, or tag…",
+      "tags": "Filter by tags",
+      "tagsEmpty": "Tags will appear once you add them."
+    },
+    "actions": {
+      "addItem": "Add item",
+      "hideForm": "Hide form",
+      "delete": "Delete",
+      "deleteConfirm": "Remove {{name}} from inventory?"
+    },
+    "form": {
+      "title": "Add new inventory item",
+      "description": "Capture the basic details required to track this asset.",
+      "name": "Name",
+      "quantity": "Quantity",
+      "tags": "Tags",
+      "cancel": "Cancel",
+      "create": "Create item",
+      "placeholderDescription": "Describe how this item is used or stored."
+    },
+    "fields": {
+      "name": "Name",
+      "description": "Description",
+      "quantity": "Quantity",
+      "tags": "Tags",
+      "descriptionPlaceholder": "Add extra context for this item.",
+      "updatedAt": "Last updated {{value}}"
+    },
+    "tagManager": {
+      "create": "New tag",
+      "rename": "Rename",
+      "remove": "Remove",
+      "createPrompt": "Enter the name for the new tag",
+      "renamePrompt": "Rename tag \"{{label}}\"",
+      "deletePrompt": "Delete tag \"{{label}}\"? It must not be in use.",
+      "created": "Tag \"{{label}}\" saved.",
+      "renamed": "Tag renamed to \"{{label}}\".",
+      "deleted": "Tag \"{{label}}\" removed."
+    },
+    "feedback": {
+      "saving": "Saving inventory changes…",
+      "created": "Item created successfully.",
+      "updated": "Item updated.",
+      "deleted": "Item deleted.",
+      "error": "Unable to save inventory changes.",
+      "createdWithName": "\"{{name}}\" saved in inventory.",
+      "deletedWithName": "\"{{name}}\" removed.",
+      "name": "Name updated.",
+      "description": "Description updated.",
+      "quantity": "Quantity updated.",
+      "tags": "Tags updated."
+    },
+    "errors": {
+      "loadFailed": "We couldn’t load the inventory data."
+    },
+    "empty": {
+      "title": "No inventory items yet",
+      "description": "Add your first record to start tracking supplies."
+    }
+  },
+  "staffingPanel": {
+    "title": "Staffing & Logistics"
+  },
+  "financePanel": {
+    "title": "Financial Overview"
+  },
+  "geoPanel": {
+    "title": "Opportunity Scanner"
+  }
+}
