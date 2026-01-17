@@ -3,3 +3,4 @@
 /.env
 /.env.*
 /backend/app/data/sales.json
+~$*.xlsx
