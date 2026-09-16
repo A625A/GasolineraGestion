@@ -1,50 +1,37 @@
 # Fuel Station Operations & Analytics Prototype
 
-A prototype for fuel-station operations combining inventory monitoring, consumption analytics, depletion estimates, and restocking recommendations.
+Prototype for monitoring fuel inventory, consumption, and restocking.
 
-The project was developed around a **Shell fuel-station operations use case** to explore how operational data could be transformed into clearer inventory decisions and proactive restocking alerts.
+The project was built around a **Shell fuel-station use case**.
 
-> This is a prototype and not a production Shell system.
+It is a prototype and is not connected to Shell's production systems or live station data.
 
-## Problem
+## What It Does
 
-Fuel stations need to understand how quickly each fuel type is being consumed, how much inventory remains, and when a new delivery should be scheduled.
+The backend provides information such as:
 
-A reactive process can create two opposite problems:
-
-- Fuel runs out before the next delivery.
-    
-- Excess inventory is ordered unnecessarily.
-    
-
-This prototype explores how operational data can support more proactive inventory management.
-
-## What the Prototype Does
-
-The backend exposes fuel analytics used by the dashboard to provide information such as:
-
-- Current fuel inventory
+- Current inventory
     
 - Tank capacity
     
 - Weekly liters sold
     
-- Seven-day average consumption
+- Average recent consumption
     
-- Fuel pricing
+- Fuel prices
     
-- Recent restock information
+- Last restock date
     
 - Estimated days until depletion
     
 - Projected depletion date
     
-- Recommended restocking date
+- Suggested restocking date
     
-- Operational alerts
+- Inventory warnings
     
 
-The prototype currently supports:
+The current version works with:
 
 - Regular
     
@@ -53,80 +40,36 @@ The prototype currently supports:
 - Diesel
     
 
-## Restocking Logic
+## Restocking Estimate
 
-The current recommendation model intentionally uses a simple and explainable approach rather than a complex machine-learning model.
+The current logic is intentionally simple.
 
-### 1. Recent Consumption
+It looks at the last seven days of consumption and calculates an average daily usage.
 
-The system analyzes recent daily fuel consumption and calculates a seven-day average.
-
-### 2. Days to Depletion
-
-Estimated remaining operating time is calculated from:
+Estimated days remaining are calculated as:
 
 ```text
 current inventory / average daily consumption
 ```
 
-### 3. Projected Depletion
+From there, the backend estimates a depletion date and uses the delivery lead time to suggest when another restock should be made.
 
-The system estimates the date on which the current inventory would be depleted if recent consumption continues.
-
-### 4. Restocking Recommendation
-
-The expected delivery lead time is applied to the projected depletion date to recommend when the next restock should occur.
-
-### 5. Alerts
-
-Operational status is classified according to the estimated depletion window.
-
-- **Warning:** projected depletion within seven days
-    
-- **Critical:** projected depletion within three days
-    
-
-The dashboard can use these statuses to highlight fuels requiring attention.
-
-## Current Data Status
-
-The current analytics endpoint uses synthetic/demo consumption history to validate the concept.
-
-It is **not connected to live Shell operational data**.
-
-The prototype was designed so that the demo data source can later be replaced with a real operational source.
-
-## Architecture
-
-The application uses a multi-service Docker architecture.
+It also generates:
 
 ```text
-             ┌──────────────┐
-             │   Frontend   │
-             └──────┬───────┘
-                    │
-                    ▼
-             ┌──────────────┐
-             │   FastAPI    │
-             │   Backend    │
-             └──────┬───────┘
-                    │
-          ┌─────────┴─────────┐
-          ▼                   ▼
- ┌────────────────┐   ┌────────────────┐
- │ PostgreSQL /   │   │     Redis      │
- │ PostGIS        │   │                │
- └────────────────┘   └────────────────┘
-
-           Reverse Proxy
-                │
-                ▼
-              Nginx
+warning  → estimated depletion within 7 days
+critical → estimated depletion within 3 days
 ```
 
-Docker Compose manages the main services.
+## Data
 
-## Tech Stack
+The current version uses demo consumption data.
+
+It is not connected to real Shell sales or inventory systems.
+
+The idea was to build the analytics and application structure first so the data source could later be replaced with real operational data.
+
+## Stack
 
 ### Backend
 
@@ -139,11 +82,9 @@ Docker Compose manages the main services.
 - Pandas
     
 
-### Data & Infrastructure
+### Infrastructure
 
-- PostgreSQL
-    
-- PostGIS
+- PostgreSQL / PostGIS
     
 - Redis
     
@@ -154,41 +95,9 @@ Docker Compose manages the main services.
 - Nginx
     
 
-## API
+## Services
 
-The main analytics endpoint is:
-
-```text
-GET /api/gasoline/stats
-```
-
-It provides the data required for the fuel-monitoring dashboard and operational indicators.
-
-## Running the Project
-
-Clone the repository:
-
-```bash
-git clone https://github.com/A625A/GasolineraGestion.git
-cd GasolineraGestion
-```
-
-Create local environment files from the examples:
-
-```bash
-cp env/backend.env.example env/backend.env
-cp env/frontend.env.example env/frontend.env
-```
-
-Review the generated files and replace development placeholders where necessary.
-
-Then run:
-
-```bash
-docker compose up --build
-```
-
-The Docker environment includes services for:
+The Docker setup includes:
 
 ```text
 frontend
@@ -198,67 +107,82 @@ redis
 nginx
 ```
 
-The backend is exposed locally on:
+The backend exposes:
+
+```text
+GET /api/gasoline/stats
+```
+
+which provides the fuel statistics used by the dashboard.
+
+## Run Locally
+
+```bash
+git clone https://github.com/A625A/GasolineraGestion.git
+cd GasolineraGestion
+```
+
+Create the local environment files:
+
+```bash
+cp env/backend.env.example env/backend.env
+cp env/frontend.env.example env/frontend.env
+```
+
+Then run:
+
+```bash
+docker compose up --build
+```
+
+The backend is available at:
 
 ```text
 http://localhost:8000
 ```
 
-## Security
+## Environment Variables
 
-Real credentials should never be committed to the repository.
+The committed `.env.example` files only contain placeholder values.
 
-The committed environment files are templates using placeholder values such as:
+For example:
 
 ```text
-CHANGE_ME
+POSTGRES_PASSWORD=CHANGE_ME
+REDIS_PASSWORD=CHANGE_ME
+MAPBOX_TOKEN=CHANGE_ME
 ```
 
-Local credentials should be stored only in local environment files excluded from Git.
+Real credentials should stay in local environment files.
 
 ## Current Limitations
 
-This project is a prototype.
-
-Current limitations include:
-
-- Demo/synthetic consumption history
+- Uses demo consumption data
     
-- No connection to live station transaction systems
+- No live station integration
     
-- No production Shell integration
+- No real Shell production data
     
-- Restocking recommendations use an intentionally simple forecasting approach
+- Restocking logic is based on recent average consumption
     
-- Recommendations should be treated as decision-support indicators, not automatic purchasing decisions
+- Forecasting has not been validated against real station history
     
 
-## Future Improvements
+## Possible Improvements
 
-Possible next steps include:
+Some things I would like to add later:
 
-- Connect real transaction and inventory data
+- Historical consumption stored in PostgreSQL
     
-- Store historical consumption in PostgreSQL
+- Real transaction and inventory data
     
-- Compare consumption behavior by station
+- Station-to-station comparisons
     
-- Add seasonality and day-of-week effects
+- Better demand forecasting
     
-- Improve demand forecasting
+- Day-of-week and seasonal effects
     
-- Add delivery lead-time uncertainty
+- Anomaly detection
     
-- Build station-level anomaly detection
-    
-- Add historical KPI reporting
-    
-- Evaluate forecasting performance against actual consumption
-    
-
-## Purpose
-
-The objective of this project is not to create an unnecessarily complex prediction model.
-
-It is to demonstrate how fuel-station operational data can be transformed into **clear, explainable, and actionable inventory information**.
+- Historical KPI reporting
 
