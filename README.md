@@ -40,6 +40,51 @@ The current version works with:
 - Diesel
     
 
+## Running Analytics UI
+
+The repository includes a Streamlit analytics interface for the demo dataset. The screenshots below are generated automatically from the running application, not from design mockups.
+
+<table>
+  <tr>
+    <td width="50%" align="center">
+      <a href="assets/screenshots/gasolinera-dashboard.png"><img src="assets/screenshots/gasolinera-dashboard.png" width="520" alt="Fuel station analytics dashboard"></a><br>
+      <strong>Operational Dashboard</strong><br>
+      Consumption history and high-level operational snapshot.
+    </td>
+    <td width="50%" align="center">
+      <a href="assets/screenshots/gasolinera-forecast.png"><img src="assets/screenshots/gasolinera-forecast.png" width="520" alt="Monthly fuel usage forecast"></a><br>
+      <strong>Demand Forecasting</strong><br>
+      Historical monthly usage with forward predictions.
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" align="center">
+      <a href="assets/screenshots/gasolinera-peak-analysis.png"><img src="assets/screenshots/gasolinera-peak-analysis.png" width="520" alt="Peak hour fuel demand analysis"></a><br>
+      <strong>Peak-Hour Analysis</strong><br>
+      Hour and weekday demand patterns from synthetic sales logs.
+    </td>
+    <td width="50%" align="center">
+      <a href="assets/screenshots/gasolinera-mapping.png"><img src="assets/screenshots/gasolinera-mapping.png" width="520" alt="Fuel station location recommendations"></a><br>
+      <strong>Location Recommendations</strong><br>
+      KMeans-based candidate locations and estimated demand.
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" align="center">
+      <a href="assets/screenshots/gasolinera-contacts.png"><img src="assets/screenshots/gasolinera-contacts.png" width="520" alt="Fuel station contact directory"></a><br>
+      <strong>Contact Directory</strong><br>
+      Categorized operational contacts with export support.
+    </td>
+    <td width="50%" align="center">
+      <a href="assets/screenshots/gasolinera-inventory.png"><img src="assets/screenshots/gasolinera-inventory.png" width="520" alt="Fuel inventory snapshot"></a><br>
+      <strong>Inventory Snapshot</strong><br>
+      Current demo tank levels and capacity by fuel type.
+    </td>
+  </tr>
+</table>
+
+The UI uses synthetic/sample data. Forecasts, clustering outputs, and inventory values are demonstrations of the application workflow and are not connected to real Shell systems.
+
 ## Restocking Estimate
 
 The current logic is intentionally simple.
