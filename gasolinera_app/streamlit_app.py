@@ -56,7 +56,7 @@ def show_logo_gallery() -> None:
     for col, fuel in zip(cols, ["Regular", "Premium", "Diesel"]):
         path = get_logo_path(fuel)
         if path:
-            col.image(str(path), caption=fuel, use_column_width=True)
+            col.image(str(path), caption=fuel, width="stretch")
         else:
             col.write(f"{fuel} logo missing.")
 
