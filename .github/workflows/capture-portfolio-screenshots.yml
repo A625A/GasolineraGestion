@@ -10,6 +10,10 @@ on:
 permissions:
   contents: write
 
+concurrency:
+  group: gasolinera-portfolio-screenshots
+  cancel-in-progress: true
+
 jobs:
   capture:
     runs-on: ubuntu-latest
@@ -107,5 +111,6 @@ jobs:
             echo "Screenshots unchanged."
           else
             git commit -m "docs: capture Gasolinera analytics screens"
+            git pull --rebase origin main
             git push
           fi
