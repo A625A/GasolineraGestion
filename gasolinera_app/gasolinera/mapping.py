@@ -104,7 +104,7 @@ class LocationRecommender:
         return recommendations.rename(columns={self.lat_column: "latitude", self.lon_column: "longitude"})
 
 
-def build_folium_map(existing: pd.DataFrame, recommendations: pd.DataFrame, *, tiles: str = "CartoDB positron"):
+def build_folium_map(existing: pd.DataFrame, recommendations: pd.DataFrame, *, tiles: str = "OpenStreetMap"):
     """
     Visualise current and suggested locations using Folium.
 
