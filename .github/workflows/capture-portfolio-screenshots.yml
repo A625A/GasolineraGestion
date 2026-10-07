@@ -69,6 +69,7 @@ jobs:
 
               page.goto(base, wait_until="networkidle")
               page.get_by_text("Operational Snapshot", exact=True).wait_for(timeout=60000)
+              page.wait_for_timeout(3500)
               page.screenshot(
                   path="assets/screenshots/gasolinera-dashboard.png",
                   full_page=True,
