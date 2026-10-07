@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - ".github/workflows/capture-portfolio-screenshots.yml"
+      - "gasolinera_app/**"
   workflow_dispatch:
 
 permissions:
@@ -67,10 +68,7 @@ jobs:
               )
 
               page.goto(base, wait_until="networkidle")
-              page.wait_for_timeout(5000)
-              print("PAGE BODY:")
-              print(page.locator("body").inner_text())
-              page.get_by_text("Operational Snapshot", exact=True).wait_for(timeout=30000)
+              page.get_by_text("Operational Snapshot", exact=True).wait_for(timeout=60000)
               page.screenshot(
                   path="assets/screenshots/gasolinera-dashboard.png",
                   full_page=True,
@@ -97,12 +95,6 @@ jobs:
 
               browser.close()
           PY
-
-      - name: Debug Streamlit log
-        if: always()
-        run: |
-          echo "===== STREAMLIT LOG ====="
-          cat /tmp/gasolinera-streamlit.log || true
 
       - name: Commit screenshots
         run: |
