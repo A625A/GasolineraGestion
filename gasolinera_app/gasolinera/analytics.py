@@ -85,7 +85,7 @@ class PeakHourAnalyzer:
         df = df.dropna(subset=[self.timestamp_column])
         df[self.volume_column] = pd.to_numeric(df[self.volume_column], errors="coerce").fillna(0.0)
 
-        grouped = df.groupby(df[self.timestamp_column].dt.floor("H"))[self.volume_column].sum()
+        grouped = df.groupby(df[self.timestamp_column].dt.floor("h"))[self.volume_column].sum()
         mean = grouped.mean()
         std = grouped.std(ddof=0)
         if std == 0:
@@ -131,7 +131,7 @@ def sample_sales_log(periods: int = 500, station_id: str = "CDMX-01") -> pd.Data
     The output conforms to the expected schema for :class:`PeakHourAnalyzer`.
     """
 
-    timestamps = pd.date_range("2024-01-01", periods=periods, freq="H")
+    timestamps = pd.date_range("2024-01-01", periods=periods, freq="h")
     rng = pd.Series(range(periods))
     # Build a demand curve that peaks during morning and evening rush hours.
     hour = timestamps.hour
