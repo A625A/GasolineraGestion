@@ -1,0 +1,109 @@
+name: Capture portfolio screenshots
+
+on:
+  push:
+    paths:
+      - ".github/workflows/capture-portfolio-screenshots.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  capture:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - name: Install application and browser
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r gasolinera_app/requirements.txt
+          pip install playwright
+          python -m playwright install --with-deps chromium
+
+      - name: Start the Streamlit analytics application
+        run: |
+          (
+            cd gasolinera_app
+            PYTHONPATH="$PWD" streamlit run streamlit_app.py               --server.headless true               --server.address 127.0.0.1               --server.port 8501               --browser.gatherUsageStats false               > /tmp/gasolinera-streamlit.log 2>&1 &
+            echo $! > /tmp/gasolinera-streamlit.pid
+          )
+
+          python - <<'PY'
+          import time
+          import urllib.request
+
+          for _ in range(120):
+              try:
+                  urllib.request.urlopen("http://127.0.0.1:8501", timeout=1)
+                  break
+              except Exception:
+                  time.sleep(1)
+          else:
+              raise SystemExit("Streamlit application did not start")
+          PY
+
+      - name: Capture all analytics screens
+        run: |
+          mkdir -p assets/screenshots
+
+          python - <<'PY'
+          from playwright.sync_api import sync_playwright
+
+          base = "http://127.0.0.1:8501"
+
+          with sync_playwright() as p:
+              browser = p.chromium.launch()
+              page = browser.new_page(
+                  viewport={"width": 1440, "height": 1100},
+                  device_scale_factor=1,
+              )
+
+              page.goto(base, wait_until="networkidle")
+              page.get_by_text("Operational Snapshot", exact=True).wait_for(timeout=120000)
+              page.screenshot(
+                  path="assets/screenshots/gasolinera-dashboard.png",
+                  full_page=True,
+              )
+
+              sidebar = page.locator('[data-testid="stSidebar"]')
+
+              screens = [
+                  ("Forecast", "Monthly Usage Prediction", "gasolinera-forecast.png", 8000),
+                  ("Peak analysis", "Peak Hour Analysis", "gasolinera-peak-analysis.png", 2500),
+                  ("Mapping", "Location Recommendations", "gasolinera-mapping.png", 4000),
+                  ("Contacts", "Contact Directory", "gasolinera-contacts.png", 2000),
+                  ("Inventory", "Inventory Snapshot", "gasolinera-inventory.png", 2000),
+              ]
+
+              for nav_label, heading, filename, settle_ms in screens:
+                  sidebar.get_by_text(nav_label, exact=True).click()
+                  page.get_by_text(heading, exact=True).wait_for(timeout=120000)
+                  page.wait_for_timeout(settle_ms)
+                  page.screenshot(
+                      path=f"assets/screenshots/{filename}",
+                      full_page=True,
+                  )
+
+              browser.close()
+          PY
+
+      - name: Commit screenshots
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/screenshots/gasolinera-*.png
+
+          if git diff --cached --quiet; then
+            echo "Screenshots unchanged."
+          else
+            git commit -m "docs: capture Gasolinera analytics screens"
+            git push
+          fi
